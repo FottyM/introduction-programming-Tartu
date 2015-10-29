@@ -1,6 +1,6 @@
 from pip.backwardcompat import raw_input
 
-__author__ = 'Fortunat Mutunda'
+__author__ = 'Fotty'
 
 """
 Write a program that prompts a user for their name (first name and family name separately) and then welcomes them.

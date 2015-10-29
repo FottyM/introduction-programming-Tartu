@@ -1,4 +1,4 @@
-__author__ = 'Fortunat Mutunda'
+__author__ = 'Fotty'
 from pip._vendor.distlib.compat import raw_input
 """
 Write a program which prompts the user for one integer number and prints out the part of multiplication table

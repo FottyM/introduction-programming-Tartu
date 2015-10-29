@@ -1,4 +1,4 @@
-'Fortunat Mutunda'
+__author__ = 'Fotty'
 from pip.backwardcompat import raw_input
 """
 Exercise 1. Celsius and Fahrenheit
