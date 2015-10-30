@@ -27,12 +27,13 @@ def create_account():
     account = open('data.txt', 'a')
     first_name = raw_input("first name: ")
     last_name = raw_input("last name: ")
-    password = raw_input("password 4 digits: ")
+    password = "0000"
     balance = 0
     account_number = to_string(str(random.randint(0,10000000000) % 10000000000))
     acc_details = first_name + ","+last_name+","+str(password)+","+str(balance)+","+str(account_number) + "\n"
     account.write(acc_details)
     print "Done! "
+    print("Your password is 0000 and your account number is " + account_number + "\nplease make sure you change your password imediatly: ")
 
 
 def deposit_money():
@@ -46,11 +47,15 @@ def deposit_money():
         dets = (lines[index].split(","))
 
         if (dets[0] == first_name) and (dets[2] == password):
-            money_to_deposit = raw_input("Enter the amount of money to deposit: ")
-            sum = str(float(dets[3]) + float(money_to_deposit))
-            dets[3] = str(sum)
-            bigIndex = index
-            break
+            money_to_deposit = float(raw_input("Enter the amount of money to deposit: "))
+            if 0.0 < money_to_deposit:
+                sum = str(float(dets[3]) + float(money_to_deposit))
+                dets[3] = str(sum)
+                bigIndex = index
+                print "Your balance is now: " + dets[3]
+                break
+            else:
+                print("Is that money? please try again ")
 
     if(bigIndex != -1):
         lines[bigIndex] = (",".join(el for el in dets))
@@ -59,8 +64,8 @@ def deposit_money():
     account = open('data.txt', 'w+')
     for element in lines:
         account.write(element)
-    print "Your balance is now: " + dets[3]
-    return "Money deposited: " + dets[3]
+
+    #return "Money deposited: " + dets[3]
 
 
 
@@ -98,7 +103,7 @@ def withdraw_money():
     for element in lines:
         account.write(element)
 
-    return "Money deposited: " + dets[3]
+    return "Withdrawn " + dets[3]
 
 
 
@@ -121,7 +126,7 @@ def check_account():
 def change_password():
     account = open('data.txt', 'r+')
     first_name = raw_input("What's your name please: ")
-    password = str(raw_input("Password please: "))
+    password = str(raw_input("Enter old password please: "))
     lines = account.readlines()
     bigIndex = -1
 
@@ -129,11 +134,15 @@ def change_password():
         dets = (lines[index].split(","))
 
         if (dets[0] == first_name) and (dets[2] == password):
-            enter_new_password = int(raw_input("Enter new password:\n "))
-            new_password = str(enter_new_password)
-            dets[2] = str(new_password)
-            bigIndex = index
-            break
+            enter_new_password = int(raw_input("Enter new password: "))
+            if (len(str(enter_new_password)) == 4):
+                new_password = enter_new_password
+                dets[2] = str(new_password)
+                bigIndex = index
+                print("Password updated! \n")
+                break
+            else:
+                print("4 digits please: ")
 
     if(bigIndex != -1):
         lines[bigIndex] = (",".join(el for el in dets))
@@ -142,7 +151,7 @@ def change_password():
     account = open('data.txt', 'w+')
     for element in lines:
         account.write(element)
-    return "Password updated\n "
+    #return "Password updated\n "
 
 
 
@@ -153,7 +162,7 @@ while True:
               "2.To make a deposit: \n"
               "3.To withdraw money\n"
               "4.To Check the balance:\n"
-              "5.Change password: \n")
+              "5.Change password: ")
     choice = str(raw_input())
     try:
         if choice == '1':
