@@ -32,7 +32,7 @@ def create_account():
     account_number = to_string(str(random.randint(0,10000000000) % 10000000000))
     acc_details = first_name + ","+last_name+","+str(password)+","+str(balance)+","+str(account_number) + "\n"
     account.write(acc_details)
-    print("Done! ")
+    print "Done! "
 
 
 def deposit_money():
@@ -59,15 +59,16 @@ def deposit_money():
     account = open('data.txt', 'w+')
     for element in lines:
         account.write(element)
-    print("Your balance is now: ",dets[3])
-    return "Money deposited: ", dets[3]
+    print "Your balance is now: " + dets[3]
+    return "Money deposited: " + dets[3]
 
 
 
 def withdraw_money():
+
     account = open('data.txt', 'r+')
-    first_name = str(raw_input("What's your name please: "))
-    password = str(raw_input("Password please: "))
+    first_name = raw_input("What's your name please: ")
+    password = raw_input("Password please: ")
     lines = account.readlines()
     bigIndex = -1
 
@@ -76,15 +77,18 @@ def withdraw_money():
 
         if (dets[0] == first_name) and (dets[2] == password):
             money_to_withdraw = raw_input("How much do you want to withdraw: ")
+
             if float(money_to_withdraw) > 0 and float(money_to_withdraw) <= float(dets[3]):
+
                 sum = str(float(dets[3]) - float(money_to_withdraw))
                 dets[3] = str(sum)
-                print(dets[3],"Withdrawn ")
+                print dets[3] + "Withdrawn "
                 bigIndex = index
+
             else:
-                print("Not enough money into your account")
-        else:
-            print("Wrong credentials please try again: ")
+                print "Not enough money into your account"
+        #else:
+         #   print "Wrong credentials please try again: "
 
     if(bigIndex != -1):
         lines[bigIndex] = (",".join(el for el in dets))

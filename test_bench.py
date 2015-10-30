@@ -1,4 +1,4 @@
-from pip._vendor.distlib.compat import raw_input
+#from pip._vendor.distlib.compat import raw_input
 
 __author__ = 'Fotty'
 
