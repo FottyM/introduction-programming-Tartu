@@ -1,5 +1,4 @@
 __author__ = 'Fotty'
-from pip._vendor.distlib.compat import raw_input
 """
 Exercise 1. Celsius and Fahrenheit
 

@@ -1,16 +1,10 @@
-#from pip._vendor.distlib.compat import raw_input
-
 __author__ = 'Fotty'
 
-# Triangle
-# Intergers not divisible by 10
-# Clecius Farheneit
-
-first_name = input("Name: ")
-last_name = input("Last name: ")
+first_name = raw_input("Name: ")
+last_name = raw_input("Last name: ")
 names = str(first_name + " " + last_name)
-date_of_birth = input("Date of birth: ")
-date_of_death = input("Dead : ")
+date_of_birth = raw_input("Date of birth: ")
+date_of_death = raw_input("Dead : ")
 dates = str(date_of_death + "-" + date_of_birth)
 size = max(len(names), len(dates)) + 10
 print("+" + "-" * size + "+")
@@ -21,11 +15,7 @@ print("|" + dates.center(size) + "|")
 print("|" + " " * size + "|")
 print("+" + "-" * size + "+")
 
-
-
-
-
-word = input()
+word = raw_input()
 n = len(word)/2
 
 for i in raw_input(n):

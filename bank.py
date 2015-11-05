@@ -15,7 +15,7 @@ import random
 '''
 
 
-#account = open('data.txt', 'a')
+account = open('data.txt', 'a')
 
 def to_string(string):
     if (len(string) < 10):
