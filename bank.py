@@ -1,6 +1,8 @@
 __author__ = 'Fotty'
 import random
-# from pip._vendor.distlib.compat import raw_input
+# This is the finale project I made
+# works with Python 2
+
 
 '''
 1. Create your own account
@@ -184,4 +186,4 @@ while True:
 
 
 
-
+#God bless

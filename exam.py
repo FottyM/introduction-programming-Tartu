@@ -1,7 +1,3 @@
-attending_guests = 0
-not_sure_if_attending_guests = 0
-
-
 def budget(number_of_people):
     room = 100
     food = 15
@@ -9,6 +5,9 @@ def budget(number_of_people):
     max_budget = room + (number_of_people * food)
     return "Minimum budget is: " + str(min_budget) + " EUR" + "\n" + "Maximum budget is: " + str(max_budget) + " EUR"
 
+
+attending_guests = 0
+not_sure_if_attending_guests = 0
 
 try:
     guestsFile = open('guests.txt')
