@@ -1,10 +1,15 @@
 from easygui import *
 from turtle import *
+<<<<<<< HEAD
+=======
+
+>>>>>>> second
 '''
 Home Exercise 1: Flag
 Choose one country's flag (with at least three colors or with more complex shape)
 (http://www.flags.net/) and draw it with turtle.
 '''
+<<<<<<< HEAD
 setup(600,400)
 title("swiss flag")
 speed(10)
@@ -41,6 +46,10 @@ right(90)
 forward(60)
 end_fill()
 exitonclick()
+=======
+
+
+>>>>>>> second
 
 
 
@@ -54,6 +63,7 @@ that includes both the name of the user and the number of days in the entered mo
 '''
 
 
+<<<<<<< HEAD
 def ask_year():
     name = enterbox("Hi what's your name?")
     birth_month = integerbox("What is your birth month? ", lowerbound = 1, upperbound = 12)
@@ -70,3 +80,13 @@ def ask_year():
                 break
 
 ask_year()
+=======
+mychoices = ["my favorite","easy","ok","difficult"]
+pressed = choicebox("Programming is ", choices = mychoices)
+if pressed == None:
+    msgbox("You did not choose anything, you little rebel!")
+elif pressed == "my favorite":
+    msgbox("Programming is your favorite course! As it should be!")
+else:
+    msgbox("So you think that programming is " + pressed + ", hmm, interesting!")
+>>>>>>> second
