@@ -1,5 +1,4 @@
-__author__ = 'Fotty'
-<<<<<<< HEAD
+
 from easygui import *
 
 def ask_year():
@@ -7,7 +6,6 @@ def ask_year():
     message = msgbox( )
     return "You entered" + year
 ask_year()
-=======
 
 # (format is: month;year;salary;money spent):
 fileX = open("details.txt")
@@ -74,4 +72,4 @@ try:
     print(str(useless_months))
 except:
     print('oops')
->>>>>>> second
+
