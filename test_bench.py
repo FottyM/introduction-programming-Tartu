@@ -39,12 +39,3 @@ password = "Py\thon"
 
 print("Username is " + username)
 print("Password is " + password)
-
-
-
-
-
-
-
-
-
